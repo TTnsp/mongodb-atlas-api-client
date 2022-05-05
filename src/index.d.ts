@@ -94,7 +94,9 @@ export interface AtlasClientConfig {
 export interface AtlasClientOptions {
     envelope?: boolean;
     itemsPerPage?: number;
+    pageNum?: number;
     pretty?: boolean;
+    includeCount?: boolean;
 }
 
 export default function getMongodbAtlasApiClient(config: AtlasClientConfig): AtlasClient;
