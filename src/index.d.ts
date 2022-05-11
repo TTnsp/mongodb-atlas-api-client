@@ -47,10 +47,11 @@ export interface Link {
 export type Links = Link[];
 
 export interface AtlasError {
-    details: string;
+    detail: string;
     error: number;
     errorCode: string;
     reason: string;
+    parameters: string[];
 }
 
 export type ResponseOrError<T> = T | AtlasError;
