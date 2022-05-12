@@ -24,7 +24,7 @@ export * from './projectAccesslist';
 export * from './user';
 export * from './dataLake'
 export * from './cloudProviderAccess';
-export * from './atlasSearch';
+export {IndexId, DatabaseName, CollectionName, AtlasSearch} from './atlasSearch';
 
 export interface KeyValuePairDocument {
     key: string;
