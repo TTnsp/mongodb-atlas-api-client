@@ -16,6 +16,7 @@ export type GetAllProjectsResponse = AtlasResultsResponse<GetProjectResponse>;
 export interface CreateProjectRequest {
     name: string;
     orgId: string;
+    withDefaultAlertsSettings?: boolean
 }
 export type CreateProjectResponse = GetProjectResponse;
 export interface GetTeamsByProjectResponse {
