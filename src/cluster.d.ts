@@ -24,6 +24,24 @@ export interface GetClusterResponse {
         readPreference: 'primary' | 'secondary' | 'analytics'
     };
     clusterType: 'REPLICASET' | 'SHARDED' | 'GEOSHARDED';
+    connectionStrings: {
+        privateEndpoint: {
+            connectionString: string;
+            endpoints: {
+                endpointId: string;
+                providerName: string;
+                region: string;
+
+            }[];
+            srvConnectionString: string;
+            type: string;
+        }[];
+        standard: string;
+        standardSrv: string;
+        private: string;
+        privateSrv: string;
+    };
+    createDate: string;
     diskSizeGB: number;
     encryptionAtRestProvider: string;
     groupId: string;
@@ -62,8 +80,10 @@ export interface GetClusterResponse {
         numShards: number;
         regionsConfig: ClusterRegionConfig;
     }[];
+    rootCertType: string
     srvAddress: string;
     stateName: string;
+    versionReleaseSystem: string
 }
 export type GetAllClustersResponse = AtlasResultsResponse<GetClusterResponse>;
 export interface CreateClusterRequest {
@@ -114,6 +134,8 @@ export interface CreateClusterRequest {
     }[];
 }
 export interface GetClusterAdvancedConfigResponse {
+    defaultReadConcern: string;
+    defaultWriteConcern: string;
     failIndexKeyTooLong: boolean;
     javascriptEnabled: boolean;
     minimumEnabledTlsProtocol: string;
